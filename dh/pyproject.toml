@@ -1,0 +1,125 @@
+# This project was generated with 0.3.22 using template: https://github.com/beeware/briefcase-template@v0.3.22
+[tool.briefcase]
+project_name = "dh"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/dh"
+license.file = "LICENSE"
+author = "dh"
+author_email = "dh@example.com"
+
+[tool.briefcase.app.dh]
+formal_name = "dh"
+description = "dh"
+long_description = """More details about the app should go here.
+"""
+sources = [
+    "src/dh",
+]
+test_sources = [
+    "tests",
+]
+requires = [
+    "PySide6~=6.7",
+    "PySide6-Essentials~=6.7",
+    "PySide6-Addons~=6.7",
+    "mlx_lm",
+]
+test_requires = [
+    "pytest",
+]
+
+[tool.briefcase.app.dh.macOS]
+universal_build = false
+requires = [
+    "std-nslog~=1.0.3",
+]
+app_packages = [
+    "mlx_lm",
+]
+
+[tool.briefcase.app.dh.linux]
+requires = [
+]
+app_packages = [
+    "mlx_lm",
+]
+
+[tool.briefcase.app.dh.linux.system.debian]
+system_requires = [
+]
+system_runtime_requires = [
+    # Derived from https://doc.qt.io/qt-6/linux-requirements.html
+    "libxext6",
+    "libxrender1",
+    "libx11-xcb1",
+    "libxkbcommon-x11-0",
+    "libxcb-image0",
+    "libxcb-cursor0",
+    "libxcb-shape0",
+    "libxcb-randr0",
+    "libxcb-xfixes0",
+    "libxcb-sync1",
+    "libxcb-icccm4",
+    "libxcb-keysyms1",
+    "libfontconfig1",
+    "libsm6",
+    "libice6",
+    "libglib2.0-0",
+    "libgl1",
+    "libegl1",
+    "libdbus-1-3",
+]
+
+[tool.briefcase.app.dh.linux.system.rhel]
+system_requires = [
+]
+system_runtime_requires = [
+    "qt6-qtbase-gui",
+]
+
+[tool.briefcase.app.dh.linux.system.suse]
+system_requires = [
+]
+system_runtime_requires = [
+    "libgthread-2_0-0",
+    "libQt6Gui6",
+]
+
+[tool.briefcase.app.dh.linux.system.arch]
+system_requires = [
+]
+system_runtime_requires = [
+    "qt6-base",
+]
+
+[tool.briefcase.app.dh.linux.appimage]
+manylinux = "manylinux_2_28"
+system_requires = [
+# ?? FIXME
+]
+linuxdeploy_plugins = [
+]
+
+[tool.briefcase.app.dh.linux.flatpak]
+flatpak_runtime = "org.kde.Platform"
+flatpak_runtime_version = "6.7"
+flatpak_sdk = "org.kde.Sdk"
+
+[tool.briefcase.app.dh.windows]
+requires = [
+]
+app_packages = [
+    "mlx_lm",
+]
+
+# Mobile deployments
+[tool.briefcase.app.dh.iOS]
+supported = false
+
+[tool.briefcase.app.dh.android]
+supported = false
+
+# Web deployments
+[tool.briefcase.app.dh.web]
+supported = false
